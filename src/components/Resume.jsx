@@ -3,13 +3,25 @@ import './Resume.css'
 const resumeData = {
   name: '华先生 (Mr. Hua)',
   title: '高级前端架构师 / 资深开发工程师',
+  subtitle: 'Senior Frontend Architect & Developer',
   basicInfo: {
     gender: '男',
     age: '39岁',
     hometown: '杭州',
     experience: '15年工作经验',
     location: '现居：日本',
-    email: 'tchualingfeng@gmail.com'
+    email: 'tchualingfeng@gmail.com',
+    phone: '+81-90-XXXX-XXXX',
+    linkedin: 'linkedin.com/in/huasenior',
+    github: 'github.com/huasenior'
+  },
+  contactInfo: {
+    email: 'tchualingfeng@gmail.com',
+    phone: '+81-90-XXXX-XXXX',
+    address: '东京都, 日本',
+    linkedin: 'linkedin.com/in/huasenior',
+    github: 'github.com/huasenior',
+    website: 'www.huasenior.dev'
   },
   advantages: [
     {
@@ -117,11 +129,31 @@ const resumeData = {
     degree: '本科',
     period: '2005 - 2009'
   },
-  skills: [
-    'React', 'Vue', 'Node.js', 'TypeScript', 'JavaScript',
-    'Weex', 'Rax', 'WebRTC', 'D3.js', 'Echarts',
-    'Canvas', 'PixiJS', '微信小程序', 'Low-Code',
-    'GIS', '微前端', 'Webpack', 'Vite'
+  skillCategories: [
+    {
+      category: '前端框架',
+      skills: ['React', 'Vue', 'Angular', 'Next.js', 'Nuxt.js']
+    },
+    {
+      category: '编程语言',
+      skills: ['TypeScript', 'JavaScript', 'Node.js', 'Python', 'Java']
+    },
+    {
+      category: '跨端技术',
+      skills: ['Weex', 'Rax', '微信小程序', 'React Native', 'Flutter']
+    },
+    {
+      category: '可视化与音视频',
+      skills: ['D3.js', 'Echarts', 'Canvas', 'PixiJS', 'WebRTC']
+    },
+    {
+      category: '架构与工具',
+      skills: ['微前端', 'Low-Code', 'Webpack', 'Vite', 'Docker', 'K8s']
+    },
+    {
+      category: '专业技能',
+      skills: ['GIS', '大数据处理', 'AI集成', '性能优化', '团队管理']
+    }
   ]
 }
 
@@ -131,23 +163,26 @@ function Resume() {
       {/* Header Section */}
       <header className="resume-header">
         <div className="header-main">
-          <div className="avatar">
-            <span className="avatar-text">华</span>
+          <div className="header-left">
+            <div className="avatar">
+              <span className="avatar-text">华</span>
+            </div>
+            <div className="header-actions">
+              <button className="download-btn">
+                <i className="icon">💾</i>下载简历
+              </button>
+            </div>
           </div>
           <div className="header-info">
             <h1>{resumeData.name}</h1>
             <h2>{resumeData.title}</h2>
+            <p className="subtitle">{resumeData.subtitle}</p>
             <div className="basic-info">
               <span><i className="icon">👤</i>{resumeData.basicInfo.gender}</span>
               <span><i className="icon">📅</i>{resumeData.basicInfo.age}</span>
               <span><i className="icon">🏠</i>籍贯：{resumeData.basicInfo.hometown}</span>
               <span><i className="icon">💼</i>{resumeData.basicInfo.experience}</span>
               <span><i className="icon">📍</i>{resumeData.basicInfo.location}</span>
-            </div>
-            <div className="contact-info">
-              <a href={`mailto:${resumeData.basicInfo.email}`}>
-                <i className="icon">✉️</i>{resumeData.basicInfo.email}
-              </a>
             </div>
           </div>
         </div>
@@ -173,11 +208,18 @@ function Resume() {
       <section className="section skills">
         <h3 className="section-title">
           <span className="title-icon">🛠️</span>
-          技能标签
+          技能矩阵
         </h3>
-        <div className="skills-container">
-          {resumeData.skills.map((skill, index) => (
-            <span key={index} className="skill-tag">{skill}</span>
+        <div className="skills-matrix">
+          {resumeData.skillCategories.map((category, index) => (
+            <div key={index} className="skill-category">
+              <h4 className="category-title">{category.category}</h4>
+              <div className="skills-container">
+                {category.skills.map((skill, skillIndex) => (
+                  <span key={skillIndex} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -254,9 +296,70 @@ function Resume() {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <section className="section contact">
+        <h3 className="section-title">
+          <span className="title-icon">📞</span>
+          联系方式
+        </h3>
+        <div className="contact-grid">
+          <div className="contact-item">
+            <div className="contact-icon">📧</div>
+            <div className="contact-details">
+              <span className="contact-label">邮箱</span>
+              <a href={`mailto:${resumeData.contactInfo.email}`}>{resumeData.contactInfo.email}</a>
+            </div>
+          </div>
+          <div className="contact-item">
+            <div className="contact-icon">📱</div>
+            <div className="contact-details">
+              <span className="contact-label">电话</span>
+              <span>{resumeData.contactInfo.phone}</span>
+            </div>
+          </div>
+          <div className="contact-item">
+            <div className="contact-icon">📍</div>
+            <div className="contact-details">
+              <span className="contact-label">地址</span>
+              <span>{resumeData.contactInfo.address}</span>
+            </div>
+          </div>
+          <div className="contact-item">
+            <div className="contact-icon">🔗</div>
+            <div className="contact-details">
+              <span className="contact-label">LinkedIn</span>
+              <a href={`https://${resumeData.contactInfo.linkedin}`} target="_blank" rel="noopener noreferrer">
+                {resumeData.contactInfo.linkedin}
+              </a>
+            </div>
+          </div>
+          <div className="contact-item">
+            <div className="contact-icon">💻</div>
+            <div className="contact-details">
+              <span className="contact-label">GitHub</span>
+              <a href={`https://${resumeData.contactInfo.github}`} target="_blank" rel="noopener noreferrer">
+                {resumeData.contactInfo.github}
+              </a>
+            </div>
+          </div>
+          <div className="contact-item">
+            <div className="contact-icon">🌐</div>
+            <div className="contact-details">
+              <span className="contact-label">个人网站</span>
+              <a href={`https://${resumeData.contactInfo.website}`} target="_blank" rel="noopener noreferrer">
+                {resumeData.contactInfo.website}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="resume-footer">
-        <p>感谢您的阅读 | Thank you for reading</p>
+        <div className="footer-content">
+          <p>感谢您的阅读 | Thank you for reading</p>
+          <p className="footer-note">此简历使用 React 技术栈开发，展现前端工程师的技术实力</p>
+        </div>
       </footer>
     </div>
   )
