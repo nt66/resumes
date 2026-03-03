@@ -1,0 +1,444 @@
+.resume {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.resume-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 30px;
+  color: white;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.header-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.avatar-text {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.header-info h1 {
+  font-size: 2.2rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.header-info h2 {
+  font-size: 1.2rem;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.basic-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.basic-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.icon {
+  font-style: normal;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  transition: opacity 0.3s;
+}
+
+.contact-info a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Sections */
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0 0 24px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #667eea;
+}
+
+.title-icon {
+  font-size: 1.2rem;
+}
+
+/* Advantages */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.advantage-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advantage-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card h4 {
+  color: #667eea;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.advantage-card p {
+  margin: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -26px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border: 3px solid #667eea;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.job-company h4 {
+  margin: 0 0 6px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.job-company .location {
+  color: #667eea;
+  font-weight: 500;
+}
+
+.job-company .position {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.job-header .period {
+  color: #888;
+  font-size: 0.9rem;
+  background: #e8ecf4;
+  padding: 4px 12px;
+  border-radius: 15px;
+}
+
+.job-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project {
+  padding-left: 16px;
+  border-left: 3px solid #d4d9e8;
+}
+
+.project h5 {
+  margin: 0 0 6px 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+.project p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Core Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #d4daef;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.project-header .role {
+  background: #667eea;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.project-value .value-label {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.project-value p {
+  margin: 6px 0 0 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Education */
+.education-content {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.edu-main h4 {
+  margin: 0 0 12px 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.edu-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.edu-details span {
+  background: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #555;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.edu-details .major {
+  color: #667eea;
+  font-weight: 500;
+}
+
+/* Footer */
+.resume-footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume {
+    padding: 20px 16px;
+  }
+
+  .resume-header {
+    padding: 24px;
+  }
+
+  .header-main {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-info h2 {
+    font-size: 1rem;
+  }
+
+  .basic-info {
+    justify-content: center;
+  }
+
+  .advantages-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+
+  .timeline {
+    padding-left: 24px;
+  }
+}
+
+@media print {
+  .resume {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .section {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .resume-header {
+    background: #667eea !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .skill-tag {
+    background: #667eea !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
