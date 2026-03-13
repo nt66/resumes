@@ -81,6 +81,51 @@
   font-size: 0.9rem;
 }
 
+.sidebar-advantages {
+  margin-top: 50px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.sidebar-advantages img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 1px solid #38bdf8; */
+  /* box-shadow: 
+    0 4px 12px rgba(56, 189, 248, 0.3),
+    0 0 0 4px rgba(56, 189, 248, 0.1); */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  filter: brightness(1.05);
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 4px 12px rgba(56, 189, 248, 0.3),
+      0 0 0 4px rgba(56, 189, 248, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 4px 16px rgba(56, 189, 248, 0.4),
+      0 0 0 6px rgba(56, 189, 248, 0.15);
+  }
+}
+
+.sidebar-advantages img:hover {
+  transform: scale(1.08);
+  border-color: #7dd3fc;
+  box-shadow: 
+    0 8px 24px rgba(56, 189, 248, 0.4),
+    0 0 0 6px rgba(56, 189, 248, 0.15);
+  filter: brightness(1.1) contrast(1.05);
+  animation: none;
+}
+
 .resume-main {
   display: flex;
   flex-direction: column;
@@ -219,6 +264,23 @@
 
   .resume-sidebar {
     position: static;
+    text-align: center;
+  }
+
+  .sidebar-advantages {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-advantages img {
+    width: 80px;
+    height: 80px;
+    border-width: 2px;
+  }
+
+  .sidebar-nav,
+  .sidebar-links {
+    justify-content: center;
   }
 
   .contact-list {

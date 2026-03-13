@@ -1,5 +1,7 @@
 import "./Resume.css";
 
+import headerImage from "../assets/header.png";
+
 const resumeData = {
   name: "华先生 William",
   title: "高级前端架构师 / 资深开发工程师",
@@ -172,7 +174,6 @@ function Resume() {
         <h1>{resumeData.name}</h1>
         <h2>{resumeData.title}</h2>
         <p className="sidebar-subtitle">{resumeData.subtitle}</p>
-
         <div className="sidebar-meta">
           <span>{resumeData.basicInfo.experience}</span>
           <span>{resumeData.basicInfo.location}</span>
@@ -212,6 +213,11 @@ function Resume() {
             Website
           </a>
         </div>
+
+            <div className="sidebar-advantages">
+          <img src={headerImage} alt="华先生 - 高级前端架构师" title="华先生 William" />
+        </div>
+
       </aside>
 
       <main className="resume-main">
