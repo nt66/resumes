@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Resume.css";
 
 import headerImage from "../assets/header.png";
@@ -214,12 +215,15 @@ function Resume() {
             Website
           </a>
         </div>
-
-            <div className="sidebar-advantages">
+        <div className="sidebar-advantages">
           <div className="avatar-switcher">
             <img className="avatar-img avatar-img--back" src={headerImage2} alt="华先生 - 高级前端架构师" />
             <img className="avatar-img avatar-img--front" src={headerImage} alt="华先生 William" title="华先生 William" />
           </div>
+          <div className="lang-switcher">
+          <Link to="/zh" className="active">中文</Link>
+          <Link to="/en">EN</Link>
+        </div>
         </div>
 
       </aside>
@@ -337,8 +341,6 @@ function Resume() {
         </section>
 
         <footer className="resume-footer">
-          <p>Loosely inspired by a clean single-page portfolio style.</p>
-          <p>Built with React + Vite.</p>
         </footer>
       </main>
     </div>
