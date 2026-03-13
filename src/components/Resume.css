@@ -84,46 +84,72 @@
 .sidebar-advantages {
   margin-top: 50px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 
-.sidebar-advantages img {
+.avatar-switcher {
+  position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  object-fit: cover;
-  /* border: 1px solid #38bdf8; */
-  /* box-shadow: 
-    0 4px 12px rgba(56, 189, 248, 0.3),
-    0 0 0 4px rgba(56, 189, 248, 0.1); */
-  transition: all 0.3s ease;
   cursor: pointer;
-  filter: brightness(1.05);
+  flex-shrink: 0;
   animation: subtle-pulse 3s ease-in-out infinite;
 }
 
 @keyframes subtle-pulse {
   0%, 100% {
-    box-shadow: 
+    box-shadow:
       0 4px 12px rgba(56, 189, 248, 0.3),
       0 0 0 4px rgba(56, 189, 248, 0.1);
   }
   50% {
-    box-shadow: 
+    box-shadow:
       0 4px 16px rgba(56, 189, 248, 0.4),
       0 0 0 6px rgba(56, 189, 248, 0.15);
   }
 }
 
-.sidebar-advantages img:hover {
-  transform: scale(1.08);
-  border-color: #7dd3fc;
-  box-shadow: 
-    0 8px 24px rgba(56, 189, 248, 0.4),
-    0 0 0 6px rgba(56, 189, 248, 0.15);
-  filter: brightness(1.1) contrast(1.05);
+.avatar-switcher:hover {
   animation: none;
+  box-shadow:
+    0 8px 24px rgba(56, 189, 248, 0.45),
+    0 0 0 6px rgba(56, 189, 248, 0.18);
+}
+
+.avatar-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: brightness(1.05);
+  transition:
+    opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.55s ease;
+}
+
+.avatar-img--back {
+  opacity: 0;
+  transform: scale(1.04);
+  filter: brightness(1.08) saturate(1.1);
+}
+
+.avatar-img--front {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.avatar-switcher:hover .avatar-img--front {
+  opacity: 0;
+  transform: scale(0.97);
+}
+
+.avatar-switcher:hover .avatar-img--back {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .resume-main {
@@ -270,12 +296,12 @@
   .sidebar-advantages {
     margin-top: 20px;
     margin-bottom: 20px;
+    justify-content: center;
   }
 
-  .sidebar-advantages img {
+  .avatar-switcher {
     width: 80px;
     height: 80px;
-    border-width: 2px;
   }
 
   .sidebar-nav,

@@ -1,6 +1,7 @@
 import "./Resume.css";
 
 import headerImage from "../assets/header.png";
+import headerImage2 from "../assets/header2.png";
 
 const resumeData = {
   name: "华先生 William",
@@ -215,7 +216,10 @@ function Resume() {
         </div>
 
             <div className="sidebar-advantages">
-          <img src={headerImage} alt="华先生 - 高级前端架构师" title="华先生 William" />
+          <div className="avatar-switcher">
+            <img className="avatar-img avatar-img--back" src={headerImage2} alt="华先生 - 高级前端架构师" />
+            <img className="avatar-img avatar-img--front" src={headerImage} alt="华先生 William" title="华先生 William" />
+          </div>
         </div>
 
       </aside>
