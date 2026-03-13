@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Resume.css";
 
 import headerImage from "../assets/header.png";
@@ -157,7 +156,7 @@ const resumeData = {
   ],
 };
 
-function ResumeEn() {
+function ResumeEn({ currentLang = "en" }) {
   const aboutParagraphs = [
     "I'm a senior frontend engineer focused on architecture and engineering excellence. Over 15 years I've designed and shipped enterprise-grade web products across multiple industries, with a strong ability to abstract complex business requirements into reusable, scalable frontend systems.",
     "My recent work spans cross-national teams and high-concurrency domains including travel & mobility in Japan, government data visualization, Low-Code platforms, and real-time audio/video applications — consistently delivering measurable improvements in efficiency and user experience.",
@@ -211,14 +210,25 @@ function ResumeEn() {
         </div>
         <div className="sidebar-advantages">
           <div className="avatar-switcher">
-            <img className="avatar-img avatar-img--back" src={headerImage2} alt="William Hua – Senior Frontend Architect" />
-            <img className="avatar-img avatar-img--front" src={headerImage} alt="William Hua" title="William Hua" />
+            <img
+              className="avatar-img avatar-img--back"
+              src={headerImage2}
+              alt="William Hua – Senior Frontend Architect"
+            />
+            <img
+              className="avatar-img avatar-img--front"
+              src={headerImage}
+              alt="William Hua"
+              title="William Hua"
+            />
           </div>
           <div className="lang-switcher">
-          <Link to="/zh">中文</Link>
-          <Link to="/en" className="active">EN</Link>
+          <a href="#zh" className={currentLang === "zh" ? "active" : ""}>中文</a>
+          <a href="#en" className={currentLang === "en" ? "active" : ""}>EN</a>
         </div>
         </div>
+
+
       </aside>
 
       <main className="resume-main">
